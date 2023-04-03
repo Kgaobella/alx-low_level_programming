@@ -1,28 +1,19 @@
 #include "lists.h"
-
 /**
- * print_listint_safe - Listas enlazadas
- * @head: Dado desde main
- *
- * Return: i
+ *print_listint_safe - prints a listint_t linked list
+ *@head: pointer to the first element
+ *Return: number of nodes on a list
  */
+
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t i = 0;
-	const listint_t *temp, *node;
+  size_t temp;
+  unasigned int cout = 1;
 
-	node = head;
-	while (node != NULL)
-	{
-		printf("[%p] %d\n", (void *)node, node->n);
-		temp = node;
-		node = node->next;
-		i++;
-		if (temp <= node)
-		{
-			printf("-> [%p] %d\n", (void *)node, node->n);
-			break;
-		}
-	}
-	return (i);
+  temp = head;
+  while (temp != NULL)
+    {
+      cout << temp->n << "";
+      temp = temp->next;
+    }
 }
